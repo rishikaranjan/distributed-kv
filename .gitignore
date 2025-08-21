@@ -1,0 +1,11 @@
+
+bin/
+logs/
+*.log
+*.pid
+data/
+*.sqlite
+# macOS / editor junk
+.DS_Store
+.idea/
+.vscode/
