@@ -1,11 +1,21 @@
-
+# Go build
 bin/
-logs/
-*.log
-*.pid
+*.exe
+*.test
+*.out
+
+# Local runtime/state
 data/
-*.sqlite
-# macOS / editor junk
+logs/
+nohup.out
+*.pid
+*.log
+
+# Prometheus/Grafana runtime
+prometheus/
+grafana/data/
+
+# Editors/OS
 .DS_Store
-.idea/
 .vscode/
+.idea/

@@ -1,0 +1,29 @@
+syntax = "proto3";
+package kv;
+
+// IMPORTANT: matches your Go import: "distributed-kv/kv"
+option go_package = "distributed-kv/kv;kv";
+
+service KVService {
+  rpc Get(GetRequest) returns (GetResponse) {}
+  rpc Put(PutRequest) returns (PutResponse) {}
+}
+
+message GetRequest {
+  string key = 1;
+  bool allow_stale = 2; // For geo reads (unused in this demo)
+}
+
+message GetResponse {
+  string value = 1;
+  int64 timestamp = 2;
+}
+
+message PutRequest {
+  string key = 1;
+  string value = 2;
+}
+
+message PutResponse {
+  bool success = 1;
+}
